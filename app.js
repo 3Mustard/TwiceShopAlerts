@@ -45,25 +45,29 @@ var MY_PHONE_NUMBER = '';
 
 // START
 //
-if (debug){
-  console.log('Running debug functions..');
+startApp();
 
-  debugCheckKeyword();
-
-  checkCollection();
-
-} else {
-
-  setInterval(main, queueTimeInterval);
-  setInterval(checkCollection, queueTimeInterval);
-  console.log('Starting app');
-
+function startApp(){
+  if (debug){
+    console.log('Running debug functions..');
+    debugCheckKeyword();
+    checkCollection();
+  
+  } else {
+  
+    setInterval(main, queueTimeInterval);
+    setInterval(checkCollection, queueTimeInterval);
+    console.log('Starting app');
+  
+  }
 }
 
 function main(){
   searchUrlForKeywords(twiceShopUrl, keywords);
 }
 
+// Search a URL for any string in an array
+//
 function searchUrlForKeywords(URL, keywords){
   console.log('searching..')
 
@@ -91,6 +95,8 @@ function searchUrlForKeywords(URL, keywords){
   })
 }
 
+// Search for TWICE member collection page on Twice Shop
+//
 async function checkCollection(){
   var collectionURL = debug ? twiceShopNayeonCollectionUrl : twiceShopJihyoCollectionUrl;
   console.log('Checking collection: ' + collectionURL);
@@ -109,6 +115,9 @@ async function checkCollection(){
 
 }
 
+// Twilio SMS free trial texting
+//
+// expires every 30 days unless you pay $
 function sendSms(message, fromNumber, toNumber){
   console.log('Sending sms to ' + toNumber + '..');
   const client = new twilio(TWILIO_SID, TWILIO_AUTH_TOKEN);
@@ -117,6 +126,7 @@ function sendSms(message, fromNumber, toNumber){
 
 // DEBUG FUNCTIONS
 //
+// Check a single word 
 function debugCheckKeyword(){
   console.log('Checking ' + twiceShopUrl + ' for the keyword ' + debugKeyword);
 
