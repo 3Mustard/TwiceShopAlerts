@@ -22,6 +22,7 @@ var debugUrl = "";
 //
 var keywords = ['KILLIN', 'killin', 'Me Good', 'ME GOOD', 'Good', 'GOOD', 'KILLIN ME GOOD' , 'Killin Me Good', 'killin me good', 'KILLIN` ME GOOD', 'KILLIN\' ME GOOD'];
 // 'Killin' found in a comment ~ Killing any Ajax request that's...
+
 var debugKeyword = 'NAYEON';
 
 // time between checks 
@@ -29,16 +30,17 @@ var queueTimeInterval = 600000; // 10 min?
 
 // TWILIO TEXTING SERVICES TRIAL ENDS IN 30 DAYS
 // 
-// START ~ 7/16/2023
-var twilioTrialStartDate = new Date(2023,7,16);
+// START
+var twilioTrialStartDate = new Date(2023,7,16); // add twilio trial start date here
 var twilioTrialEndDate = twilioTrialStartDate.setDate(twilioTrialStartDate.getDate() + 30);
 console.log('Twilio texting services trial ends 30 days after ~ 2023,7,16' );
 console.log('To continue Twilio texting services please sign up or create a new trial account.')
 
-var TWILIO_SID = 'ACdcdd0123e91af32c0ba1ce31f7b3601e';
-var TWILIO_AUTH_TOKEN = 'fa36b745ecc36dc37aa5d53b2f4aedd6';
-var TWILIO_PHONE_NUMBER = '+18442606797';
-var MY_PHONE_NUMBER = '+15854147239';
+// MAKE A TWILIO TRIAL ACCOUNT
+var TWILIO_SID = '';
+var TWILIO_AUTH_TOKEN = '';
+var TWILIO_PHONE_NUMBER = '';
+var MY_PHONE_NUMBER = '';
 
 
 // START
